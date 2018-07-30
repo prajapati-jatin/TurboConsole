@@ -70,6 +70,9 @@
     <Reference Include="Sitecore.Client, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Sitecore.Client.NoReferences.9.0.180604\lib\NET462\Sitecore.Client.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ExperienceEditor, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sitecore.ExperienceEditor.NoReferences.9.0.180604\lib\NET462\Sitecore.ExperienceEditor.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Sitecore.Kernel.NoReferences.9.0.180604\lib\NET462\Sitecore.Kernel.dll</HintPath>
     </Reference>

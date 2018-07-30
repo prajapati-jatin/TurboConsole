@@ -1,9 +1,13 @@
 ﻿using Sitecore.Data;
 using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
+using Sitecore.Diagnostics;
+using Sitecore.Shell.Applications.WebEdit;
 using Sitecore.Shell.Framework.Commands;
+using Sitecore.Web.UI.Sheer;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Web;
 
@@ -35,6 +39,10 @@ namespace TurboConsole.Client.Commands
             {
                 return CurrentItemUri == null ? null : Database.GetItem(CurrentItemUri);
             }
+            set
+            {
+                CurrentItemUri = value?.Uri;
+            }
         }
 
         protected Item SettingsItem
@@ -65,6 +73,24 @@ namespace TurboConsole.Client.Commands
             }
 
             return context.Items.Length != 1 || context.Parameters["ScriptRunning"] == "1" ? CommandState.Disabled : CommandState.Enabled;
+        }
+
+        protected virtual PageEditFieldEditorOptions GetOptions(ClientPipelineArgs args, NameValueCollection form)
+        {
+            EnsureContext(args);
+        }
+
+        protected virtual void EnsureContext(ClientPipelineArgs args)
+        {
+            var path = args.Parameters[PathParameter];
+            var currentItem = Database.GetItem(ItemUri.Parse(args.Parameters[UriParameter]));
+
+            currentItem = String.IsNullOrEmpty(path) ? currentItem : Sitecore.Client.ContentDatabase.GetItem(path);
+            Assert.IsNotNull(currentItem, CurrentItemIsNull);
+            CurrentItem = currentItem;
+            var settingsItem = Sitecore.Client.CoreDatabase.GetItem(args.Parameters[ButtonParameter]);
+            Assert.IsNotNull(settingsItem, SettingsItemIsNull);
+            SettingsItem = settingsItem;
         }
 
         public override void Execute(CommandContext context)
