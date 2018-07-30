@@ -1,0 +1,129 @@
+html {
+    height: 100%;
+    width: 100%;
+
+    body {
+        overflow: hidden;
+
+        #terminalCode {
+            height: 30%;
+        }
+
+        .scRibbon {
+            position: relative;
+        }
+
+        #scRibbonToggle {
+            display: none;
+        }
+
+        .console {
+            background-color: #012456;
+            border: none;
+            color: #fff;
+            font-size: 12px;
+            font-weight: normal;
+            margin: 0;
+            overflow: auto;
+            white-space: pre-wrap;
+            width: 99%;
+
+            a {
+                color: #ffa;
+            }
+
+            a:visited {
+                color: #ffa;
+            }
+
+            a:hover {
+                color: #ffa;
+                text-decoration: underline;
+            }
+
+            a:active {
+                color: #ffa;
+                text-decoration: underline;
+            }
+        }
+
+        .pre {
+            font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+            white-space: pre-wrap;
+        }
+
+        #Result {
+            margin: 0 !important;
+            padding: 3px 0 2px 3px !important;
+            position: relative;
+        }
+
+        #ScriptResult {
+            left: 0;
+            overflow: auto;
+            top: 0;
+            width: 100%;
+            bottom: 0;
+            font-size: 15px;
+        }
+
+        #ScriptResult pre {
+            margin: 4px 2px !important;
+            z-index: 0;
+            position: absolute;
+        }
+
+        #StatusBar {
+            height: 20px;
+            margin: 2px 5px 0 8px;
+            overflow: hidden;
+            padding: 0 0 3px 0;
+
+            .status-bar-panel {
+                background-color: white;
+                border: solid 1px silver;
+                padding: 2px 2px;
+            }
+
+            .status-bar-text {
+                height: 14px;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            .status-bar-right {
+                float: right;
+                margin-left: 2px;
+                width: 50px;
+                height: 14px;
+            }
+
+            .status-bar-right-icon {
+                float: right;
+                margin-left: 2px;
+                text-align: center;
+                width: 16px;
+                height: 14px;
+                cursor: pointer;
+            }
+
+            .status-bar-right-icon:active {
+                -ms-opacity: 0.6;
+                opacity: 0.6;
+            }
+
+            .status-bar-script {
+                float: right;
+                margin-left: 2px;
+                width: 500px;
+            }
+
+            .status-bar-left {
+                float: left;
+                margin-right: 2px;
+                padding-left: 3px;
+                width: 80px;
+            }
+        }
+    }
+}

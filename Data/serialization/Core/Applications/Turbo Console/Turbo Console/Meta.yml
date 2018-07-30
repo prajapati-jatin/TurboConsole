@@ -1,0 +1,14 @@
+﻿---
+ID: "ad9dc6b9-a149-4320-a268-72f5dd0fc767"
+Parent: "eed835c1-22b9-4c5a-ae06-54370fa82fb5"
+Template: "b0666cfe-8c7b-4cc1-8e32-8253742ebfa9"
+Path: /sitecore/content/Applications/Turbo Console/Turbo Console/Meta
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180730T114655Z

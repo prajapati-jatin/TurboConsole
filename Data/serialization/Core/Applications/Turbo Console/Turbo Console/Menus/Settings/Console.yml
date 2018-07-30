@@ -1,0 +1,25 @@
+﻿---
+ID: "6df7a081-6b63-4dd1-b91c-104f70de794f"
+Parent: "760db3a0-de41-447c-9f4c-bb42215dd12f"
+Template: "998b965e-6ab8-4568-810f-8101d60d0cc3"
+Path: /sitecore/content/Applications/Turbo Console/Turbo Console/Menus/Settings/Console
+DB: core
+SharedFields:
+- ID: "335c6760-6c0e-4c6c-814c-a53d203f553e"
+  Hint: Icon
+  Value: Office/32x32/gearwheel.png
+- ID: "cab694fc-e37c-44eb-9012-488b775cf638"
+  Hint: Message
+  Value: "tconsole:editsettings(button=/sitecore/content/Applications/Turbo Console/Turbo Console/Meta/EditConsoleSettings,preservesections=1,appName=Console,personal=1)"
+Languages:
+- Language: en
+  Fields:
+  - ID: "9b72a62b-2775-423d-b17a-ec34a9f31af8"
+    Hint: Display name
+    Value: Console
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180730T114609Z

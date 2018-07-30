@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "sitecore modules/turbo-console/scripts/turbo-console.min.js",
+    "inputFiles": [
+      "sitecore modules/turbo-console/scripts/turbo-console.js"
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+﻿---
+ID: "eaad3bcc-23c8-4f7e-8a74-73c9e3b7dd3b"
+Parent: "eba3991f-8d26-41b1-97e5-090d55020aa0"
+Template: "72450c9c-98c4-4117-88b7-573110c7e0c0"
+Path: /sitecore/content/Documents and settings/All users/Start menu/Left/Turbo Console
+DB: core
+BranchID: "5e8cfcf9-cef2-4bdb-9e35-219c50184066"
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: /sitecore/shell/themes/standard/Software/16x16/application_run.png
+- ID: "238a40da-15f2-4412-b720-8f192ffa7491"
+  Hint: Icon
+  Value: Software/32x32/console_run.png
+- ID: "8a1ac797-0304-4c50-aaac-4d9dbbff435f"
+  Hint: Application
+  Value: |
+    <link text="" anchor="" linktype="internal" class="" title=""  querystring="" id="{EED835C1-22B9-4C5A-AE06-54370FA82FB5}" />
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{D3D7D24F-1C03-4527-BDF2-8AB9BEE4C36B}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180730T110654Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "bb865e67-0be3-49d8-b8bd-1db4b34ab2e3"
+      Hint: Tool tip
+      Value: A console to test Sitecore APIs.
+    - ID: "c032db76-cc34-4f8f-be2d-d2fb35237aab"
+      Hint: Display name
+      Value: Turbo Console

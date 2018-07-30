@@ -1,0 +1,35 @@
+﻿---
+ID: "55adaf05-61bf-4ad6-8aee-e18dff536b9c"
+Parent: "68883b76-9d04-4571-b8be-35b0d66e1513"
+Template: "97b61451-9a75-4f59-93a5-dbd8d4f44421"
+Path: /sitecore/content/Applications/Turbo Console/Turbo Console/Ribbon/Strip/Code/Run
+DB: core
+SharedFields:
+- ID: "a0b2e8b4-cd06-47f1-a721-68e108495046"
+  Hint: KeyCode
+  Value: c69
+- ID: "bd63f469-07b3-47d9-b8cc-c100191bf509"
+  Hint: Access Key
+  Value: 
+- ID: "f5a07916-7bca-4fba-857c-a5d166c332d4"
+  Hint: Icon
+  Value: Software/32x32/console_run.png
+- ID: "fc6b80f1-406d-47f0-a2b3-fcd7a8ea9d74"
+  Hint: Click
+  Value: "tconsole:run"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b11f9f5f-88fc-48c5-9501-2e827ef40ead"
+    Hint: Header
+    Value: Run
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180730T111101Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

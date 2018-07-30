@@ -1,0 +1,26 @@
+﻿---
+ID: "5fac866a-0a2e-4aa0-a05e-132eec0a26f9"
+Parent: "ad9dc6b9-a149-4320-a268-72f5dd0fc767"
+Template: "1ab4f9ad-b004-413c-8924-3e07143a614b"
+Path: /sitecore/content/Applications/Turbo Console/Turbo Console/Meta/EditConsoleSettings
+DB: core
+SharedFields:
+- ID: "cf738220-908d-4c3f-9482-32e625daf13c"
+  Hint: Fields
+  Value: SaveLastScript
+Languages:
+- Language: en
+  Fields:
+  - ID: "108d3a63-baaa-4560-86d8-3a112ed84717"
+    Hint: Header
+    Value: Code runtime settings
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180730T114709Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

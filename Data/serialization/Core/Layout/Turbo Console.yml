@@ -1,0 +1,22 @@
+﻿---
+ID: "7290e08c-4bb4-4259-ad30-075f63791b9c"
+Parent: "fa21db1e-3f70-4201-9245-98a864582651"
+Template: "1163da83-b2ef-4381-bf09-b2ff714b1b3f"
+Path: /sitecore/layout/Layouts/Applications/Turbo Console
+DB: core
+SharedFields:
+- ID: "5851d498-15f9-4b1a-bb02-0b736c13afe3"
+  Hint: Control
+  Value: TurboConsole
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180730T103249Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

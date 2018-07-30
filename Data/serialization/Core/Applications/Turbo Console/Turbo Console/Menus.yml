@@ -1,0 +1,14 @@
+﻿---
+ID: "f4beca75-4883-482d-9293-c34b061931a9"
+Parent: "eed835c1-22b9-4c5a-ae06-54370fa82fb5"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/content/Applications/Turbo Console/Turbo Console/Menus
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180730T114535Z

@@ -1,0 +1,130 @@
+/* line 1, ../sass/turbo-console.scss */
+html {
+  height: 100%;
+  width: 100%;
+}
+/* line 5, ../sass/turbo-console.scss */
+html body {
+  overflow: hidden;
+}
+/* line 8, ../sass/turbo-console.scss */
+html body #terminalCode {
+  height: 30%;
+}
+/* line 12, ../sass/turbo-console.scss */
+html body .scRibbon {
+  position: relative;
+}
+/* line 16, ../sass/turbo-console.scss */
+html body #scRibbonToggle {
+  display: none;
+}
+/* line 20, ../sass/turbo-console.scss */
+html body .console {
+  background-color: #012456;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+  width: 99%;
+}
+/* line 31, ../sass/turbo-console.scss */
+html body .console a {
+  color: #ffa;
+}
+/* line 35, ../sass/turbo-console.scss */
+html body .console a:visited {
+  color: #ffa;
+}
+/* line 39, ../sass/turbo-console.scss */
+html body .console a:hover {
+  color: #ffa;
+  text-decoration: underline;
+}
+/* line 44, ../sass/turbo-console.scss */
+html body .console a:active {
+  color: #ffa;
+  text-decoration: underline;
+}
+/* line 50, ../sass/turbo-console.scss */
+html body .pre {
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+}
+/* line 55, ../sass/turbo-console.scss */
+html body #Result {
+  margin: 0 !important;
+  padding: 3px 0 2px 3px !important;
+  position: relative;
+}
+/* line 61, ../sass/turbo-console.scss */
+html body #ScriptResult {
+  left: 0;
+  overflow: auto;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  font-size: 15px;
+}
+/* line 70, ../sass/turbo-console.scss */
+html body #ScriptResult pre {
+  margin: 4px 2px !important;
+  z-index: 0;
+  position: absolute;
+}
+/* line 76, ../sass/turbo-console.scss */
+html body #StatusBar {
+  height: 20px;
+  margin: 2px 5px 0 8px;
+  overflow: hidden;
+  padding: 0 0 3px 0;
+}
+/* line 82, ../sass/turbo-console.scss */
+html body #StatusBar .status-bar-panel {
+  background-color: white;
+  border: solid 1px silver;
+  padding: 2px 2px;
+}
+/* line 88, ../sass/turbo-console.scss */
+html body #StatusBar .status-bar-text {
+  height: 14px;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* line 94, ../sass/turbo-console.scss */
+html body #StatusBar .status-bar-right {
+  float: right;
+  margin-left: 2px;
+  width: 50px;
+  height: 14px;
+}
+/* line 101, ../sass/turbo-console.scss */
+html body #StatusBar .status-bar-right-icon {
+  float: right;
+  margin-left: 2px;
+  text-align: center;
+  width: 16px;
+  height: 14px;
+  cursor: pointer;
+}
+/* line 110, ../sass/turbo-console.scss */
+html body #StatusBar .status-bar-right-icon:active {
+  -ms-opacity: 0.6;
+  opacity: 0.6;
+}
+/* line 115, ../sass/turbo-console.scss */
+html body #StatusBar .status-bar-script {
+  float: right;
+  margin-left: 2px;
+  width: 500px;
+}
+/* line 121, ../sass/turbo-console.scss */
+html body #StatusBar .status-bar-left {
+  float: left;
+  margin-right: 2px;
+  padding-left: 3px;
+  width: 80px;
+}

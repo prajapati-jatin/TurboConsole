@@ -1,0 +1,35 @@
+﻿---
+ID: "27e0f508-f9ed-4a37-a0a7-f1937fc6483c"
+Parent: "d311711f-3532-4903-aa3e-ab4c1a20cab8"
+Template: "6f9a96d2-54ee-4123-8605-da5d42f5de81"
+Path: /sitecore/system/Modules/Turbo Console/Settings/Console/sitecore/admin
+DB: master
+SharedFields:
+- ID: "069ccea9-e656-4714-989f-f3f47d0e841c"
+  Hint: SaveLastScript
+  Type: Checkbox
+  Value: 1
+- ID: "d5b49ec1-0ab0-4c31-b49f-f797e9ddcf27"
+  Hint: LastScript
+  Value: |
+    using System;
+    using Sitecore;
+    namespace Learn{
+        public class SC{
+            public String Output(){
+                return Sitecore.Context.Database.Name;
+            }
+        }
+    }
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20180626T083548Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
