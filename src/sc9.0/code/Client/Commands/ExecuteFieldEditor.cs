@@ -1,9 +1,13 @@
-﻿using Sitecore.Data;
+﻿using Sitecore;
+using Sitecore.Data;
+using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.Data.Managers;
 using Sitecore.Diagnostics;
 using Sitecore.Shell.Applications.WebEdit;
 using Sitecore.Shell.Framework.Commands;
+using Sitecore.Text;
+using Sitecore.Web.UI.HtmlControls;
 using Sitecore.Web.UI.Sheer;
 using System;
 using System.Collections.Generic;
@@ -24,7 +28,7 @@ namespace TurboConsole.Client.Commands
         protected const String PathParameter = "path";
         protected const String SaveChangesParameter = "savechanges";
         protected const String ReloadAfterParameter = "reloadafter";
-        protected const String PreserveSectionsParamter = "preservesections";
+        protected const String PreserveSectionsParameter = "preservesections";
         protected const String CurrentItemIsNull = "Current item is null";
         protected const String SettingsItemIsNull = "Settings item is null";
         protected const String RequireTemplateParamter = "requiretemplate";
@@ -78,6 +82,16 @@ namespace TurboConsole.Client.Commands
         protected virtual PageEditFieldEditorOptions GetOptions(ClientPipelineArgs args, NameValueCollection form)
         {
             EnsureContext(args);
+            var options = new PageEditFieldEditorOptions(form, BuildListWithFieldsToShow())
+            {
+                Title = SettingsItem[Header],
+                Icon = SettingsItem[Icon]
+            };
+            options.Parameters["contentitem"] = CurrentItemUri.ToString();
+            options.PreserveSections = args.Parameters[PreserveSectionsParameter] == "1";
+            options.DialogTitle = SettingsItem[Header];
+            options.SaveItem = true;
+            return options;
         }
 
         protected virtual void EnsureContext(ClientPipelineArgs args)
@@ -93,9 +107,104 @@ namespace TurboConsole.Client.Commands
             SettingsItem = settingsItem;
         }
 
+        private IEnumerable<FieldDescriptor> BuildListWithFieldsToShow()
+        {
+            var fieldList = new List<FieldDescriptor>();
+            var fieldString = new ListString(SettingsItem[FieldName]);
+            var currentItem = CurrentItem;
+            foreach(var fieldName in fieldString)
+            {
+                if(fieldName == "*")
+                {
+                    GetNonStandardFields(fieldList);
+                    continue;
+                }
+                if(fieldName.IndexOf('-') == 0)
+                {
+                    var field = currentItem.Fields[fieldName.Substring(1, fieldName.Length - 1)];
+                    if(field != null)
+                    {
+                        var fieldId = field.ID;
+                        foreach(var fieldDescriptor in fieldList.Where(fieldDescriptor => fieldDescriptor.FieldID == fieldId))
+                        {
+                            fieldList.Remove(fieldDescriptor);
+                            break;
+                        }
+                    }
+                    continue;
+                }
+
+                if(currentItem.Fields[fieldName] != null)
+                {
+                    fieldList.Add(new FieldDescriptor(currentItem, fieldName));
+                }
+            }
+
+            return fieldList;
+        }
+
+        private void GetNonStandardFields(ICollection<FieldDescriptor> fieldList)
+        {
+            var currentItem = CurrentItem;
+            currentItem.Fields.ReadAll();
+            foreach(Field field in currentItem.Fields)
+            {
+                if(field.GetTemplateField().Template.BaseIDs.Length > 0)
+                {
+                    fieldList.Add(new FieldDescriptor(currentItem, field.Name));
+                }
+            }
+        }
+
+        public virtual Boolean CanExecute(CommandContext context)
+        {
+            return context.Items.Length > 0;
+        }
+
         public override void Execute(CommandContext context)
         {
-            throw new NotImplementedException();
+            Assert.ArgumentNotNull(context, nameof(context));
+            if (!CanExecute(context))
+                return;
+            Context.ClientPage.Start(this, "StartFieldEditor", new ClientPipelineArgs(context.Parameters)
+            {
+                Parameters = { { "uri", context.Items[0].Uri.ToString() } }
+            });
+        }
+
+        protected virtual void StartFieldEditor(ClientPipelineArgs args)
+        {
+            var current = HttpContext.Current;
+            if (current == null)
+                return;
+            var page = current.Handler as Page;
+            if (page == null)
+                return;
+            var form = page.Request.Form;
+
+            if (!args.IsPostBack)
+            {
+                SheerResponse.ShowModalDialog(GetOptions(args, form).ToUrlString().ToString(), "720", "520",
+                    string.Empty, true);
+                args.WaitForPostBack();
+            }
+            else
+            {
+                if (!args.HasResult)
+                    return;
+
+                var results = PageEditFieldEditorOptions.Parse(args.Result);
+                var currentItem = CurrentItem;
+                currentItem.Edit(options =>
+                {
+                    foreach (var field in results.Fields)
+                    {
+                        currentItem.Fields[field.FieldID].Value = field.Value;
+                    }
+                });
+
+                PageEditFieldEditorOptions.Parse(args.Result).SetPageEditorFieldValues();
+            }
         }
     }
 }
