@@ -9,6 +9,10 @@ SharedFields:
   Hint: SaveLastScript
   Type: Checkbox
   Value: 1
+- ID: "bcbf72b0-2e69-4166-85e0-cdeda9f50bd6"
+  Hint: ReferAppDomainDLLs
+  Type: Checkbox
+  Value: 1
 - ID: "d5b49ec1-0ab0-4c31-b49f-f797e9ddcf27"
   Hint: LastScript
   Value: |
@@ -17,8 +21,8 @@ SharedFields:
     namespace Learn{
         public class SC{
             public String Output(){
-                return Sitecore.Context.Database.Name;
-            }
+                return &quot;I am Turbo Console!!!&quot;;
+            }                
         }
     }
 Languages:

@@ -135,7 +135,7 @@ namespace TurboConsole.Client.Applications
             this.ScriptRunning = true;
             this.UpdateRibbon();
             var session = GetSession(onlyBuild);
-            var runner = new ScriptRunner(BuildCode, session, codeToExecute);
+            var runner = new CodeRunner(BuildCode, session, codeToExecute);
 
             Context.ClientPage.ClientResponse.SetInnerHtml("ScriptResult", "Build started...");
 

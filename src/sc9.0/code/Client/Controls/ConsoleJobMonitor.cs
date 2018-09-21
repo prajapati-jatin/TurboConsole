@@ -12,8 +12,15 @@ using System.Web;
 
 namespace TurboConsole.Client.Controls
 {
+    /// <summary>
+    /// The <see cref="ConsoleJobMonitor"/> is responsible for executing the code snippet.
+    /// Thi
+    /// </summary>
     public class ConsoleJobMonitor : Control
     {
+        /// <summary>
+        /// Job handle used to get current executing job while checking the status
+        /// </summary>
         public Handle JobHandle
         {
             get
@@ -27,6 +34,9 @@ namespace TurboConsole.Client.Controls
             }
         }
 
+        /// <summary>
+        /// Used to check the active state of the current executing job.
+        /// </summary>
         public Boolean Active
         {
             get { return GetViewStateBool("active", true); }
@@ -47,6 +57,10 @@ namespace TurboConsole.Client.Controls
         /// </summary>
         public event EventHandler JobDisappeared;
 
+        /// <summary>
+        /// This method handles the status check for the running job
+        /// </summary>
+        /// <param name="message"></param>
         public override void HandleMessage(Message message)
         {
             base.HandleMessage(message);
@@ -85,6 +99,13 @@ namespace TurboConsole.Client.Controls
             }
         }
 
+        /// <summary>
+        /// Starts the new job using <see cref="JobManager"/>.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="category"></param>
+        /// <param name="task"></param>
+        /// <param name="options"></param>
         public void Start(String name, String category, ThreadStart task, JobOptions options = null)
         {
             Assert.ArgumentNotNull(name, nameof(name));

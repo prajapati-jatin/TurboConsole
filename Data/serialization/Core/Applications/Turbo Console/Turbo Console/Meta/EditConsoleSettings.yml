@@ -7,7 +7,7 @@ DB: core
 SharedFields:
 - ID: "cf738220-908d-4c3f-9482-32e625daf13c"
   Hint: Fields
-  Value: SaveLastScript
+  Value: SaveLastScript|ReferAppDomainDLLs
 Languages:
 - Language: en
   Fields:

@@ -217,5 +217,17 @@ namespace Learn{
         {
             return String.Format("{0}/{1}", applicationName, personalizedSettings ? $"{CurrentDomain}/{CurrentUserName}" : "All Users");
         }
+
+        public static void ReloadInstance(String applicationName, Boolean personalizedSettings)
+        {
+            var settingsPath = GetSettingsName(applicationName, personalizedSettings);
+            lock (instances)
+            {
+                if (instances.ContainsKey(settingsPath))
+                {
+                    instances.Remove(settingsPath);
+                }
+            }
+        }
     }
 }

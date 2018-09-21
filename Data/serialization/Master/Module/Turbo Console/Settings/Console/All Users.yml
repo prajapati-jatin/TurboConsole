@@ -9,6 +9,10 @@ SharedFields:
   Hint: SaveLastScript
   Type: Checkbox
   Value: 1
+- ID: "bcbf72b0-2e69-4166-85e0-cdeda9f50bd6"
+  Hint: ReferAppDomainDLLs
+  Type: Checkbox
+  Value: 1
 Languages:
 - Language: en
   Versions:

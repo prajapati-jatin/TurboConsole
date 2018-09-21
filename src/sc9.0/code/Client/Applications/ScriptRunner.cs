@@ -12,7 +12,7 @@ using TurboConsole.Diagnostics;
 
 namespace TurboConsole.Client.Applications
 {
-    public class ScriptRunner
+    public class CodeRunner
     {
         public delegate void ScriptRunnerMethod(ScriptSession session, String script);
 
@@ -22,7 +22,7 @@ namespace TurboConsole.Client.Applications
 
         public ScriptRunnerMethod Method { get; private set; }
 
-        public ScriptRunner(ScriptRunnerMethod method, ScriptSession session, String script)
+        public CodeRunner(ScriptRunnerMethod method, ScriptSession session, String script)
         {
             Assert.ArgumentNotNull(script, nameof(script));
             Assert.ArgumentNotNull(method, nameof(method));
